@@ -1,2 +1,2 @@
 # ansible-lint
-ansible 2.8 + ansible-lint
+ansible 2.9 + ansible-lint
