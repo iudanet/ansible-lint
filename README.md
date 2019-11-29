@@ -7,4 +7,3 @@ ansible 2.9 + ansible-lint
 1. openssh-client
 2. bash
 3. git
-
