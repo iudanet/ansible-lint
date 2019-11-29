@@ -5,8 +5,9 @@ jobs:
   include:
     - stage: build docker image
       script:
-      - docker build -t travis-ci-build-stages-demo .
+      - docker build -t iudanet/ansible-lint .
       - docker images
-      - docker run --rm travis-ci-build-stages-demo ansible --version
-      - docker run --rm travis-ci-build-stages-demo ansible-lint --version
-      - docker run --rm travis-ci-build-stages-demo ssh -V     
+      - docker run --rm iudanet/ansible-lint ansible --version
+      - docker run --rm iudanet/ansible-lint ansible-lint --version
+      - docker run --rm iudanet/ansible-lint ssh -V
+      - docker run --rm iudanet/ansible-lint bash --version
