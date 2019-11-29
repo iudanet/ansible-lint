@@ -1,0 +1,13 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - docker build -t iudanet/ansible-lint .
+      - docker images
+      - docker run --rm iudanet/ansible-lint ansible --version
+      - docker run --rm iudanet/ansible-lint ansible-lint --version
+      - docker run --rm iudanet/ansible-lint ssh -V
+      - docker run --rm iudanet/ansible-lint bash --version
