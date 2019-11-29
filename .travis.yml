@@ -1,0 +1,15 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - docker build -t travis-ci-build-stages-demo .
+      - docker images
+    - stage: test ansible
+      script: docker run --rm travis-ci-build-stages-demo ansible --version
+    - stage: test ansible-lint
+      script: docker run --rm travis-ci-build-stages-demo ansible-lint --version
+    - stage: test ssh
+      script: docker run --rm travis-ci-build-stages-demo ssh -V     
