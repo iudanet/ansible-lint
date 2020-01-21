@@ -8,4 +8,4 @@ pycparser==2.19
 PyYAML==5.3
 ruamel.yaml==0.16.6
 ruamel.yaml.clib==0.2.0
-six==1.13.0
+six==1.14.0
