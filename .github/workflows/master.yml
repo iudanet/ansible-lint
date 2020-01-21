@@ -20,7 +20,6 @@ jobs:
       - name: Tags
         run: |
           docker tag ansible-lint ${{ github.repository }}:${{ github.sha }}
-          docker tag ansible-lint ${{ github.repository }}:${{ github.ref }}
           docker tag ansible-lint ${{ github.repository }}:latest
       - name: check install
         run: |
@@ -32,5 +31,4 @@ jobs:
       - name: Push
         run: |
           docker push ${{ github.repository }}:${{ github.sha }}
-          docker push ${{ github.repository }}:${{ github.ref }}
           docker push ${{ github.repository }}:latest
