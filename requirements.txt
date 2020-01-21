@@ -6,6 +6,6 @@ Jinja2==2.10.3
 MarkupSafe==1.1.1
 pycparser==2.19
 PyYAML==5.2
-ruamel.yaml==0.16.5
+ruamel.yaml==0.16.6
 ruamel.yaml.clib==0.2.0
 six==1.13.0
