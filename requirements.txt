@@ -4,7 +4,7 @@ cffi==1.14.0
 cryptography==2.8
 Jinja2==2.11.1
 MarkupSafe==1.1.1
-pycparser==2.19
+pycparser==2.20
 PyYAML==5.3
 ruamel.yaml==0.16.10
 ruamel.yaml.clib==0.2.0
