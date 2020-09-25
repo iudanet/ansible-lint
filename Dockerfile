@@ -1,5 +1,5 @@
 # Version: 0.0.3
-FROM python:3.8.5-alpine AS base
+FROM python:3.8.6-alpine AS base
 RUN apk add --no-cache --update openssh-client bash git make sshpass
 FROM base AS builder
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
