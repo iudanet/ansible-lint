@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     # needs: ci
     steps:
-      - uses: actions/checkout@v1
+      - name: Check out the repo
+      - uses: actions/checkout@v2
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
@@ -28,7 +29,15 @@ jobs:
           docker run --rm ${{ github.repository }}:${{ github.sha }} ansible-lint --version
           docker run --rm ${{ github.repository }}:${{ github.sha }} ssh -V
           docker run --rm ${{ github.repository }}:${{ github.sha }} bash --version
-      - name: Push
+      - name: Push to Docker Hub
         run: |
           docker push ${{ github.repository }}:${{ github.sha }}
           docker push ${{ github.repository }}:latest
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}
+          tag_with_ref: true
