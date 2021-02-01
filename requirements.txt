@@ -18,4 +18,4 @@ ruamel.yaml==0.16.12
 ruamel.yaml.clib==0.2.2
 six==1.15.0
 typing-extensions==3.7.4.3
-yamllint==1.25.0
+yamllint==1.26.0
