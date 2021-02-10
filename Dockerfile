@@ -4,7 +4,7 @@ RUN apk add --no-cache --update openssh-client bash git make sshpass
 FROM base AS builder
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
 
-RUN apk add --no-cache --update linux-headers gcc musl-dev python3-dev libffi-dev openssl-dev
+RUN apk add --no-cache --update linux-headers gcc musl-dev python3-dev libffi-dev openssl-dev rust
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv  $VIRTUAL_ENV
