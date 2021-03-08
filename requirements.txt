@@ -14,7 +14,7 @@ Pygments==2.8.0
 pyparsing==2.4.7
 PyYAML==5.4.1
 rich==9.13.0
-ruamel.yaml==0.16.12
+ruamel.yaml==0.16.13
 ruamel.yaml.clib==0.2.2
 six==1.15.0
 typing-extensions==3.7.4.3
