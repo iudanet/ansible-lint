@@ -17,5 +17,5 @@ rich==10.1.0
 ruamel.yaml==0.17.2
 ruamel.yaml.clib==0.2.2
 six==1.15.0
-typing-extensions==3.7.4.3
+typing-extensions==3.10.0.0
 yamllint==1.26.0
