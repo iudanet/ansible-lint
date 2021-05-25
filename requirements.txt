@@ -1,6 +1,6 @@
 ansible==3.2.0
 ansible-base==2.10.7
-ansible-lint==5.0.6
+ansible-lint==5.0.11
 cffi==1.14.5
 colorama==0.4.4
 commonmark==0.9.1
