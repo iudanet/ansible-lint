@@ -34,7 +34,7 @@ jobs:
           docker push ${{ github.repository }}:${{ github.sha }}
           docker push ${{ github.repository }}:latest
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.DOCKER_GITHUB_TOKEN }}
