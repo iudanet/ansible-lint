@@ -1,9 +1,22 @@
 # Version: 0.0.3
 FROM python:3.9.6-alpine AS base
-RUN apk add --no-cache --update openssh-client bash git make sshpass
+RUN apk add --no-cache --update \
+    openssh-client \
+    bash \
+    git \
+    make \
+    sshpass
 FROM base AS builder
 
-RUN apk add --no-cache --update linux-headers gcc musl-dev python3-dev libffi-dev openssl-dev
+RUN apk add --no-cache --update \
+    linux-headers \
+    gcc \
+    musl-dev \
+    python3-dev \
+    libffi-dev \
+    openssl-dev \
+    rust \
+    cargo
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv  $VIRTUAL_ENV
