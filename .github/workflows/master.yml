@@ -38,9 +38,9 @@ jobs:
         with:
           context: .
           # platforms: linux/amd64
-          push: true
-          tags: |
-            ${{ github.repository }}:latest
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: iudanet/ansible-lint:latest
+        # ${{ github.repository }}:latest
 
         # ${{ github.repository }}:${{ github.sha }}
 
