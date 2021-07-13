@@ -42,8 +42,9 @@ jobs:
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ github.sha }}
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+        # ghcr.io/${{ github.repository }}:latest
+        # ghcr.io/${{ github.repository }}:${{ github.sha }}
 
       - name: check install
         run: |
