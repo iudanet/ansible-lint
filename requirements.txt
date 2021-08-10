@@ -1,6 +1,6 @@
 ansible==4.3.0
 ansible-core==2.11.3
-ansible-lint==5.0.12
+ansible-lint==5.1.2
 bracex==2.1.1
 cffi==1.14.6
 colorama==0.4.4
@@ -16,9 +16,9 @@ Pygments==2.9.0
 pyparsing==2.4.7
 PyYAML==5.4.1
 resolvelib==0.5.4
-rich==10.6.0
+rich==10.7.0
 ruamel.yaml==0.17.10
 ruamel.yaml.clib==0.2.6
 tenacity==8.0.1
 wcmatch==8.2
-yamllint==1.26.1
+yamllint==1.26.2
