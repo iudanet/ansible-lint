@@ -21,7 +21,7 @@ pyparsing==2.4.7
 PyYAML==5.4.1
 resolvelib==0.5.4
 rich==10.9.0
-ruamel.yaml==0.17.14
+ruamel.yaml==0.17.16
 ruamel.yaml.clib==0.2.6
 tenacity==8.0.1
 wcmatch==8.2
