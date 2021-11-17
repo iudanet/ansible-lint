@@ -20,7 +20,7 @@ Pygments==2.10.0
 pyparsing==2.4.7
 PyYAML==5.4.1
 resolvelib==0.5.4
-rich==10.10.0
+rich==10.14.0
 ruamel.yaml==0.17.16
 ruamel.yaml.clib==0.2.6
 tenacity==8.0.1
