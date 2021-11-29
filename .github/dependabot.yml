@@ -1,15 +1,4 @@
 version: 2
-registries:
-  dockerhub:
-    type: docker-registry
-    url: https://registry.hub.docker.com
-    username: ${{ secrets.DOCKER_USERNAME }}
-    password: ${{ secrets.DOCKER_PASSWORD }}
-  ghcr-registry:
-    type: docker-registry
-    url: https://ghcr.io
-    username: ${{ github.actor }}
-    password: ${{ secrets.DOCKER_GITHUB_TOKEN }}
 updates:
 - package-ecosystem: docker
   directory: "/"
