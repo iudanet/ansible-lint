@@ -14,19 +14,20 @@ RUN apk add --no-cache --update \
     musl-dev \
     python3-dev \
     libffi-dev \
-    openssl-dev \
-    rust \
-    cargo
+    openssl-dev
 
-ENV VIRTUAL_ENV=/opt/venv
+
+ENV VIRTUAL_ENV=/opt/venv \
+    PIP_VERSION=21.3.1 \
+    PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3 -m venv  $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir -r /requirements.txt
+RUN  pip install --no-cache-dir --upgrade pip==${PIP_VERSION} \
+        && pip install --no-cache-dir -r /requirements.txt
 
 FROM base
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
-ENV VIRTUAL_ENV=/opt/venv
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV VIRTUAL_ENV=/opt/venv \
+    PATH="$VIRTUAL_ENV/bin:$PATH"
 COPY --from=builder $VIRTUAL_ENV $VIRTUAL_ENV
