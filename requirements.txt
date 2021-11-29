@@ -11,7 +11,7 @@ colorama==0.4.4
 commonmark==0.9.1
 cryptography==36.0.0
 enrich==1.2.6
-Jinja2==3.0.1
+Jinja2==3.0.3
 MarkupSafe==2.0.1
 packaging==21.0
 pathspec==0.9.0
