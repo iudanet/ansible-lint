@@ -1,5 +1,5 @@
 # Version: 0.0.3
-FROM python:3.9.7-alpine3.14 AS base
+FROM python:3.10.0-alpine3.14 AS base
 RUN apk add --no-cache --update \
     openssh-client \
     bash \
@@ -14,16 +14,17 @@ RUN apk add --no-cache --update \
     musl-dev \
     python3-dev \
     libffi-dev \
-    openssl-dev \
-    rust \
-    cargo
+    openssl-dev
+
 
 ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv  $VIRTUAL_ENV
+ENV PIP_VERSION=21.3.1
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN python3 -m venv  $VIRTUAL_ENV
 
 COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir -r /requirements.txt
+RUN  pip install --no-cache-dir --upgrade pip==${PIP_VERSION} \
+        && pip install --no-cache-dir -r /requirements.txt
 
 FROM base
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
