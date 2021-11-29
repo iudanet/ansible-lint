@@ -17,9 +17,9 @@ RUN apk add --no-cache --update \
     openssl-dev
 
 
-ENV VIRTUAL_ENV=/opt/venv \
-    PIP_VERSION=21.3.1 \
-    PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV VIRTUAL_ENV=/opt/venv
+ENV PIP_VERSION=21.3.1
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3 -m venv  $VIRTUAL_ENV
 
 COPY requirements.txt /requirements.txt
@@ -28,6 +28,6 @@ RUN  pip install --no-cache-dir --upgrade pip==${PIP_VERSION} \
 
 FROM base
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
-ENV VIRTUAL_ENV=/opt/venv \
-    PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 COPY --from=builder $VIRTUAL_ENV $VIRTUAL_ENV
