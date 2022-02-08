@@ -1,5 +1,5 @@
 # Version: 0.0.3
-FROM python:3.10.0-alpine3.14 AS base
+FROM python:3.10.2-alpine3.14 AS base
 RUN apk add --no-cache --update \
     openssh-client \
     bash \
