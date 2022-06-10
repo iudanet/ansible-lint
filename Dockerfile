@@ -1,5 +1,5 @@
 # Version: 0.0.3
-FROM python:3.10.4-alpine3.15 AS base
+FROM python:3.10.5-alpine3.15 AS base
 RUN apk add --no-cache --update \
     openssh-client \
     bash \
@@ -18,13 +18,18 @@ RUN apk add --no-cache --update \
 
 
 ENV VIRTUAL_ENV=/opt/venv
-ENV PIP_VERSION=22.0.4
+ENV PIP_VERSION=22.1.2
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3 -m venv  $VIRTUAL_ENV
 
 COPY requirements.txt /requirements.txt
-RUN  pip install --no-cache-dir --upgrade pip==${PIP_VERSION} \
-        && pip install --no-cache-dir -r /requirements.txt
+RUN  pip install \
+        --no-cache-dir \
+        --upgrade pip==${PIP_VERSION} \
+    && pip install \
+        --no-cache-dir \
+        --extra-index-url https://alpine-wheels.github.io/index \
+        -r /requirements.txt
 
 FROM base
 LABEL maintainer="Chudakov Aleksandr chudo@iudanet.com"
