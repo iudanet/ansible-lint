@@ -5,7 +5,7 @@ bracex==2.3.post1
 cffi==1.15.0
 colorama==0.4.4
 commonmark==0.9.1
-cryptography==37.0.2
+cryptography==38.0.1
 enrich==1.2.7
 Jinja2==3.1.2
 MarkupSafe==2.1.1
