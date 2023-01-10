@@ -1,5 +1,5 @@
 # Version: 0.0.3
-FROM python:3.10.5-alpine3.15 AS base
+FROM python:3.10.9-alpine3.17 AS base
 RUN apk add --no-cache --update \
     openssh-client \
     bash \
@@ -18,7 +18,7 @@ RUN apk add --no-cache --update \
 
 
 ENV VIRTUAL_ENV=/opt/venv
-ENV PIP_VERSION=22.1.2
+ENV PIP_VERSION=22.3.1
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3 -m venv  $VIRTUAL_ENV
 
