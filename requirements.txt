@@ -19,7 +19,7 @@ rich==13.0.1
 resolvelib==0.5.3
 ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.6
-tenacity==8.0.1
+tenacity==8.2.1
 wcmatch==8.4
 yamllint==1.28.0
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
